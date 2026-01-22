@@ -1,3 +1,5 @@
+#ACCEPTED
+
 import random
 import sys
 
