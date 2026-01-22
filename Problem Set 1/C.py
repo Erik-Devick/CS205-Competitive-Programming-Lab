@@ -2,7 +2,6 @@ import random
 import sys
 import pathlib
 import io
-import numpy as np
 
 if not sys.stdin.isatty():
     data = sys.stdin.read()
@@ -21,11 +20,12 @@ for case in range(num_cases):
     print(f"Case #{case+1}:")
     string = data.readline().strip()
     length = len(string)
-    base_graph = np.zeros((101,length), dtype=str)
+    row = ['' for _ in range(length+2)]
+    base_graph = [row.copy() for _ in range(100)]
     current_cell = (51,0)  #row, col
     for i in range(length):
         symbol = letter_to_symbol[string[i]]
-        base_graph[current_cell] = symbol
+        base_graph[current_cell[0]][current_cell[1]] = symbol
         current_cell = (current_cell[0],current_cell[1]+1)
         if symbol == "/":
             try:
