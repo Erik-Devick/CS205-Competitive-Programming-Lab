@@ -1,6 +1,8 @@
 a
 alien
 born
+b
+orn
 less
 lien
 never
@@ -11,3 +13,5 @@ the
 zebra
 ze
 bra
+act
+ct

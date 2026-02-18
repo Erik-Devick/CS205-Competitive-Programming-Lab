@@ -34,9 +34,13 @@ for word in words:
         first_section = word[:i+1]
         second_section = word[i+1:]
         #print(first_section,second_section)
-        if first_section in first_letter_dict[first_section[:1]]:
-            if second_section in first_letter_dict[second_section[:1]]:
-                two_compound_words.append(word)
+        try:
+            if first_section in first_letter_dict[first_section[:1]]:
+                if second_section in first_letter_dict[second_section[:1]]:
+                    two_compound_words.append(word)
+                    continue
+        except:
+            pass
 
 for word in two_compound_words:
     print(word)
